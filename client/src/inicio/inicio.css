@@ -1,0 +1,65 @@
+/* Estilos para el contenedor de Bienvenido */
+.welcome-container {
+    max-width: 1300px;
+    margin: 0 auto;
+    border-radius: 20px; /* Bordes circulares */
+    margin-bottom: 5px; /* Espacio entre los contenedores */
+    padding: 10px; /* Espacio interno */
+    background-color: rgba(0, 0, 0, 0.9); /* Fondo semitransparente */
+    color: white; /* Color del texto */
+    text-align: center;
+    border: 2px solid white; 
+  }
+  
+  /* Estilos para el contenedor del Panel de Control */
+  .panel-container {
+    max-width: 1250px;
+    margin: 0 auto;
+    border-radius: 20px; /* Bordes circulares */
+    margin-bottom: 5px; /* Espacio entre los contenedores */
+    padding: 10px; /* Espacio interno */
+    background-color: rgba(0, 0, 0, 0.9); /* Fondo semitransparente */
+    color: white; /* Color del texto */
+    border: 2px solid white; 
+  }
+  
+  /* Estilos para el contenedor de Programación de Citas */
+  .schedule-container {
+    max-width: 1250px;
+    margin: 0 auto;
+    border-radius: 20px; /* Bordes circulares */
+    margin-bottom: 5px; /* Espacio entre los contenedores */
+    padding: 10px; /* Espacio interno */
+    background-color: rgba(0, 0, 0, 0.9); /* Fondo semitransparente */
+    color: white; /* Color del texto */
+    align-items: center; /* Centra verticalmente */
+    border: 2px solid white; 
+    
+  }
+  
+  /* Estilos para el contenedor del Calendario */
+  .calendar-container {
+    max-width: 1250px;
+    margin: 0 auto;
+    border-radius: 20px; /* Bordes circulares */
+    padding: 0px; /* Espacio interno */
+    background-color: rgba(0, 0, 0, 0.9); /* Fondo negro */
+    color: #fff; /* Color del texto */
+    display: flex; /* Utiliza flexbox para centrar el contenido */
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+    border: 2px solid white; 
+  }
+  
+  /* Estilos para los títulos */
+  h2, h3 {
+    margin-bottom: 10px; /* Espacio inferior */
+    color: #fff;
+  }
+  /* Estilos para el Calendario */
+.react-calendar {
+    background-color: #fff; /* Fondo negro */
+    color: white; /* Texto blanco */
+    border-radius: 10px; /* Bordes circulares */
+    border: 2px solid white; 
+  }

@@ -1,0 +1,28 @@
+.navbar {
+  background-color: rgba(0, 0, 0, 0.9);
+  border: 1px solid white; /* Borde sólido blanco */
+  border-radius: 10px; /* Bordes circulares */
+  padding: 20px; /* Ajuste del relleno */
+  transition: background-color 0.10s ease; /* Transición suave del color de fondo */
+}
+
+.navbar-brand {
+  font-size: 1.5rem; /* Tamaño del texto del enlace */
+  color: #fff; /* Color del texto del enlace */
+}
+
+.navbar-nav .nav-link {
+  color: #fff; /* Color del texto de los enlaces */
+}
+
+.dropdown-menu {
+  background-color: #000; /* Fondo del menú desplegable */
+}
+
+.dropdown-item {
+  color: #fff; /* Color del texto del menú desplegable */
+}
+
+.dropdown-divider {
+  border-color: #fff; /* Color del borde divisor del menú desplegable */
+}

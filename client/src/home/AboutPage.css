@@ -1,0 +1,42 @@
+/* Estilos para la tarjeta */
+.card {
+  background-color: #fff; /* Fondo de la tarjeta negro */
+  border-radius: 20px; /* Bordes redondeados */
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5); /* Sombra más pronunciada */
+  padding: 20px; /* Espaciado interno */
+  margin: 20px; /* Margen externo */
+}
+
+/* Estilos para el título */
+.card h1 {
+  font-family: "Arial Black", sans-serif; /* Fuente moderna */
+  color: #dc3545; /* Color del texto del título rojo */
+}
+
+/* Estilos para el párrafo */
+.card p {
+  font-size: 1.2rem; /* Tamaño del texto */
+  color: #000000; /* Color del texto blanco */
+}
+
+/* Estilos para la lista */
+.card ul {
+  list-style-type: none; /* Quita los estilos de la lista */
+  padding: 0; /* Elimina el relleno predeterminado */
+}
+
+/* Estilos para los ítems de la lista */
+.card ul li::before {
+  content: "\2022"; /* Agrega un punto de viñeta */
+  color: #dc3545; /* Color del punto de viñeta rojo */
+  font-weight: bold; /* Punto de viñeta en negrita */
+  display: inline-block; /* Mostrar en línea */
+  width: 1em; /* Ancho del punto de viñeta */
+  margin-left: -1em; /* Mueve el punto de viñeta a la izquierda */
+  border: 1px solid white; 
+}
+
+/* Estilos para el texto en negrita */
+.card strong {
+  color: #fff; /* Color del texto en negrita blanco */
+}

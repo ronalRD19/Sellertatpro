@@ -1,0 +1,91 @@
+GET http://localhost:3001/usuarios
+
+HTTP/1.1 200 OK
+X-Powered-By: Express
+Access-Control-Allow-Origin: *
+Content-Type: application/json; charset=utf-8
+Content-Length: 332
+ETag: W/"14c-KcdCN1F0785sbhsIUAWWONCTZ8I"
+Date: Thu, 07 Mar 2024 20:12:23 GMT
+Connection: close
+
+{
+  "error": false,
+  "status": 200,
+  "body": [
+    {
+      "idUsuario": 16,
+      "nombre": "Mario Casas",
+      "rol": "vendedor"
+    },
+    {
+      "idUsuario": 22358,
+      "nombre": "Ronald salas",
+      "rol": "vendedor"
+    },
+    {
+      "idUsuario": 47869,
+      "nombre": "mario perez",
+      "rol": "admin"
+    },
+    {
+      "idUsuario": 58404,
+      "nombre": "luz moyano",
+      "rol": "vendedor"
+    },
+    {
+      "idUsuario": 71266,
+      "nombre": "Ronald zambrano",
+      "rol": "admin"
+    }
+  ]
+}
+###
+GET http://localhost:3001/usuarios/22358
+HTTP/1.1 200 OK
+X-Powered-By: Express
+Access-Control-Allow-Origin: *
+Content-Type: application/json; charset=utf-8
+Content-Length: 98
+ETag: W/"62-TPvyENGYs75BO8+E5JnznProijU"
+Date: Thu, 07 Mar 2024 20:46:11 GMT
+Connection: close
+
+{
+  "error": false,
+  "status": 200,
+  "body": [
+    {
+      "idUsuario": 22358,
+      "nombre": "Ronald salas",
+      "rol": "vendedor"
+    }
+  ]
+}
+###
+POST http://localhost:3001/usuarios
+
+{
+    
+    "idUsuario": "19",
+    "nombre": "David casas",
+     "usuario": "Ronald42",
+    "password": "R123456",
+    "rol": "vendedor"
+}
+  "error": false,
+    "status": 201,
+    "body": "Item actualizado con éxito"
+###
+
+PUT http://localhost:3001/usuarios
+{
+    "idUsuario": 19
+        
+}
+
+{
+    "error": false,
+    "status": 200,
+    "body": "Item eliminado con exito"
+}

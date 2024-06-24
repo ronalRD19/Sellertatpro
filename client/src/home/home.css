@@ -1,0 +1,54 @@
+/* home.css */
+
+/* Estilos para el contenedor principal */
+.container {
+  width: 80%; /* Ajusta el ancho del contenido */
+  margin: 0 auto; /* Centra el contenido horizontalmente */
+  padding: 20px; /* Añade un espacio interno alrededor del contenido */
+  
+}
+
+/* Estilos para la tarjeta */
+.card {
+  background-color: #f8f9fa; /* Fondo de la tarjeta */
+  border: 4px solid #000000;
+  border-radius: 20px; /* Bordes redondeados */
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); /* Sombra suave */
+
+}
+
+.card hr {
+  border: 2px solid #000000; /* Borde sólido rojo de 1px */
+  margin: 20px 0; /* Margen superior e inferior de 20px */
+  
+}
+
+/* Estilos para el título */
+.card h1 {
+  font-family: 'Arial Black', sans-serif; /* Fuente más llamativa */
+  color: #dc3545; /* Color rojo */
+  
+}
+
+/* Estilos para el párrafo */
+.card p {
+  font-size: 1.2rem; /* Tamaño del texto */
+  color: #fff; /* Color negro */
+}
+
+/* Estilos para el botón */
+.btn-outline-danger {
+  background-color: transparent; /* Fondo transparente */
+  border-color: #dc3545; /* Color del borde rojo */
+  color: #dc3545; /* Color del texto rojo */
+  padding: 10px 20px; /* Ajuste del relleno */
+  font-size: 1.2rem; /* Tamaño del texto */
+  border-radius: 30px; /* Bordes redondeados */
+  transition: all 0.3s ease; /* Transición suave */
+}
+
+/* Estilos para el botón al pasar el mouse */
+.btn-outline-danger:hover {
+  background-color: #dc3545; /* Fondo rojo al pasar el mouse */
+  color: #fff; /* Color del texto blanco */
+}

@@ -1,0 +1,18 @@
+/* FacturaVenta.css */
+
+.factura-venta {
+  border: 1px solid #ccc;
+  padding: 20px;
+  margin-bottom: 20px;
+  background-color: #101010;
+}
+
+.factura-venta h1 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.factura-venta p {
+  margin-bottom: 5px;
+}
+
