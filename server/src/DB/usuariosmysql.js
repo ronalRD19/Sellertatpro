@@ -90,6 +90,21 @@ function query(tabla, consulta) {
     });
 }
 
+
+function uno(tabla, idUsuario) {
+    return new Promise((resolve, reject) => {
+        conexion.query(`SELECT * FROM ${tabla} WHERE idUsuario = ?`, [idUsuario], (error, result) => {
+            if (error) {
+                return reject(error);
+            }
+            if (result.length === 0) {
+                return reject(new Error('Usuario no encontrado'));
+            }
+            resolve(result[0]);
+        });
+    });
+}
+
 module.exports = {
     todos,
     buscarPorNombre,
@@ -97,5 +112,6 @@ module.exports = {
     eliminarPorNombre,
     actualizar,
     actualizarPorUsuario,
+    uno,
     query
 };

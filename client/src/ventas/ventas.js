@@ -4,6 +4,8 @@ import Axios from 'axios';
 import { addProduct, clearProducts } from '../productos/productsSlice';
 import { logoutUser } from '../login_registro/UserSlice';
 import Modal from 'react-modal';
+import * as XLSX from 'xlsx';
+import { saveAs } from 'file-saver';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './ventas.css';
 
@@ -28,6 +30,7 @@ const Ventas = () => {
   const [resumenVentas, setResumenVentas] = useState([]);
   const [totalProductos, setTotalProductos] = useState(0);
   const [facturas, setFacturas] = useState([]);
+  const [filtros, setFiltros] = useState({ idFactura: '', fechaDesde: '', fechaHasta: '', cliente: '', usuario: '' });
 
   const fetchUsuario = async (id) => {
     try {
@@ -181,15 +184,41 @@ const Ventas = () => {
 
   const fetchFacturas = async () => {
     try {
-      const response = await Axios.get('http://localhost:3001/ventas');
-      if (response.data && Array.isArray(response.data.body)) {
-        setFacturas(response.data.body);
-      } else {
-        setFacturas([]);
-      }
+        const response = await Axios.get('http://localhost:3001/ventas');
+        if (response.data && Array.isArray(response.data.body)) {
+            const facturasConNombres = await Promise.all(response.data.body.map(async factura => {
+                // Obtener el nombre del cliente usando el idCliente
+                const clienteResponse = await Axios.get(`http://localhost:3001/clientes/id/${factura.idCliente}`);
+                const nombreCliente = clienteResponse.data.body[0]?.nombre || 'Cliente no encontrado';
+
+                // Obtener el nombre del usuario usando el idUsuario
+                const usuarioResponse = await Axios.get(`http://localhost:3001/usuarios/${factura.idUsuario}`);
+                const nombreUsuario = usuarioResponse.data.body?.nombre || 'Usuario no encontrado';
+
+                return {
+                    ...factura,
+                    nombreCliente,
+                    nombreUsuario
+                };
+            }));
+            setFacturas(facturasConNombres);
+        } else {
+            setFacturas([]);
+        }
     } catch (error) {
-      console.error('Error al obtener facturas:', error);
+        console.error('Error al obtener facturas:', error);
     }
+  };
+
+  const applyFilters = (facturas) => {
+    return facturas.filter(factura => {
+      const matchId = filtros.idFactura === '' || factura.idVenta.toString().includes(filtros.idFactura);
+      const matchFecha = (filtros.fechaDesde === '' || factura.fechaVenta >= filtros.fechaDesde) &&
+                        (filtros.fechaHasta === '' || factura.fechaVenta <= filtros.fechaHasta);
+      const matchCliente = filtros.cliente === '' || factura.nombreCliente.toLowerCase().includes(filtros.cliente.toLowerCase());
+      const matchUsuario = filtros.usuario === '' || factura.nombreUsuario.toLowerCase().includes(filtros.usuario.toLowerCase());
+      return matchId && matchFecha && matchCliente && matchUsuario;
+    });
   };
 
   const openFacturasModal = () => {
@@ -214,6 +243,33 @@ const Ventas = () => {
       console.error('Error al eliminar la factura:', error);
       alert('Error al eliminar la factura');
     }
+  };
+
+  const limpiarFiltros = () => {
+    setFiltros({ idFactura: '', fechaDesde: '', fechaHasta: '', cliente: '', usuario: '' });
+  };
+
+  const generateExcel = () => {
+    const data = applyFilters(facturas).length > 0 ? applyFilters(facturas) : facturas;
+
+    const worksheet = XLSX.utils.json_to_sheet(data.map(factura => ({
+      "ID Factura": factura.idVenta,
+      "Fecha": factura.fechaVenta,
+      "Monto Total": factura.montoTotal,
+      "Cantidad Total": factura.cantidadTotal,
+      "Cliente": factura.nombreCliente,
+      "Usuario": factura.nombreUsuario,
+      "Productos": factura.productos.map(producto => 
+        `${producto.nombre}: ${producto.cantidad} x ${producto.precio}`).join(", ")
+    })));
+
+    const workbook = XLSX.utils.book_new();
+    XLSX.utils.book_append_sheet(workbook, worksheet, "Facturas");
+
+    const excelBuffer = XLSX.write(workbook, { bookType: 'xlsx', type: 'array' });
+    const dataBlob = new Blob([excelBuffer], { type: 'application/octet-stream' });
+
+    saveAs(dataBlob, 'Facturas.xlsx');
   };
 
   return (
@@ -302,22 +358,60 @@ const Ventas = () => {
       >
         <h4>Lista de Facturas</h4>
         <div className="factura-list">
-          {facturas.map(factura => (
-            <div className="factura-item" key={factura.idVenta}>
-              <p><strong>ID Factura:</strong> {factura.idVenta}</p>
-              <p><strong>Fecha:</strong> {factura.fechaVenta}</p>
-              <p><strong>Monto Total:</strong> {factura.montoTotal}</p>
-              <p><strong>Cantidad Total:</strong> {factura.cantidadTotal}</p>
-              <p><strong>ID Cliente:</strong> {factura.idCliente}</p>
-              <p><strong>ID Usuario:</strong> {factura.idUsuario}</p>
-              <h5>Productos</h5>
-              {factura.productos.map((producto, index) => (
-                <p key={index}>{producto.nombre}: {producto.cantidad}: {producto.cantidad} x {producto.precio}</p>
-              ))}
-              <button className="btn btn-danger" onClick={() => handleEliminarFactura(factura.idVenta)}>Eliminar</button>
+            {/* Campos de filtros */}
+            <div className="filtros-container">
+                <input
+                    type="text"
+                    placeholder="ID Factura"
+                    value={filtros.idFactura}
+                    onChange={(e) => setFiltros({ ...filtros, idFactura: e.target.value })}
+                />
+                <input
+                    type="date"
+                    placeholder="Fecha Desde"
+                    value={filtros.fechaDesde}
+                    onChange={(e) => setFiltros({ ...filtros, fechaDesde: e.target.value })}
+                />
+                <input
+                    type="date"
+                    placeholder="Fecha Hasta"
+                    value={filtros.fechaHasta}
+                    onChange={(e) => setFiltros({ ...filtros, fechaHasta: e.target.value })}
+                />
+
+                <input
+                    type="text"
+                    placeholder="Cliente"
+                    value={filtros.cliente}
+                    onChange={(e) => setFiltros({ ...filtros, cliente: e.target.value })}
+                />
+                <input
+                    type="text"
+                    placeholder="Usuario"
+                    value={filtros.usuario}
+                    onChange={(e) => setFiltros({ ...filtros, usuario: e.target.value })}
+                />
+                <button onClick={limpiarFiltros} className="btn btn-secondary">Limpiar Filtros</button>
             </div>
-          ))}
+
+            {/* Listado de facturas filtradas */}
+            {applyFilters(facturas).map(factura => (
+                <div className="factura-item" key={factura.idVenta}>
+                    <p><strong>ID Factura:</strong> {factura.idVenta}</p>
+                    <p><strong>Fecha:</strong> {factura.fechaVenta}</p>
+                    <p><strong>Monto Total:</strong> {factura.montoTotal}</p>
+                    <p><strong>Cantidad Total:</strong> {factura.cantidadTotal}</p>
+                    <p><strong>Cliente:</strong> {factura.nombreCliente}</p>
+                    <p><strong>Usuario:</strong> {factura.nombreUsuario}</p>
+                    <h5>Productos</h5>
+                    {factura.productos.map((producto, index) => (
+                        <p key={index}>{producto.nombre}: {producto.cantidad} x {producto.precio}</p>
+                    ))}
+                    <button className="btn btn-danger" onClick={() => handleEliminarFactura(factura.idVenta)}>Eliminar</button>
+                </div>
+            ))}
         </div>
+        <button className="btn btn-info" onClick={generateExcel}>Exportar a Excel</button> {/* Botón dentro del Modal */}
         <button onClick={closeFacturasModal}>Cerrar</button>
       </Modal>
     </div>

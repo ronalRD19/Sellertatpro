@@ -48,11 +48,16 @@ module.exports = function(dbInyectada) {
         return db.eliminar(TABLA, idCliente);
     
     }
+    function buscarPorIdCliente(idCliente) {
+        return db.buscarPorIdCliente(idCliente);
+    }
+    
 
     return{ 
     todos,
     buscarPorNombre,
     buscarPorCedula,
+    buscarPorIdCliente,
     agregar,
     actualizar,
     eliminar,

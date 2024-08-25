@@ -102,6 +102,19 @@ function query(tabla, consulta) {
     });
 }
 
+function buscarPorIdCliente(idCliente) {
+    return new Promise((resolve, reject) => {
+        conexion.query('SELECT * FROM clientes WHERE idCliente = ?', [idCliente], (error, result) => {
+            if (error) {
+                return reject(error);
+            }
+            resolve(result);
+        });
+    });
+}
+
+
+
 module.exports = {
     todos,
     buscarPorNombre,
@@ -109,5 +122,6 @@ module.exports = {
     agregar,
     eliminar,
     actualizar,
+    buscarPorIdCliente,
     query
 };

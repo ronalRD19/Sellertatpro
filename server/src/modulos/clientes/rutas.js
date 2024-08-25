@@ -152,6 +152,7 @@ app.put('/:idCliente', actualizar);
  *         description: Error interno del servidor.
  */
 app.delete('/:idCliente', eliminar);
+app.get('/id/:idCliente', buscarPorIdCliente);
 
 async function todos(req,res, next){
     try{
@@ -231,6 +232,23 @@ async function eliminar(req, res, next) {
         next(err);
     }
 }
+
+async function buscarPorIdCliente(req, res, next) {
+    try {
+        const idCliente = req.params.idCliente;
+        const cliente = await db.buscarPorIdCliente(idCliente);
+        console.log(cliente); // Verifica lo que se obtiene aquí
+        if (!cliente || cliente.length === 0) {
+            return respuesta.error(req, res, 'Cliente no encontrado', 404);
+        }
+        respuesta.success(req, res, cliente, 200);
+    } catch (err) {
+        next(err);
+    }
+}
+
+
+
 
 
 
