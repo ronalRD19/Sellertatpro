@@ -50,6 +50,16 @@ function buscarPorNombre(nombreProveedores) {
     });
 }
 
+function buscarPorCampo(tabla, campo, valor) {
+    return new Promise((resolve, reject) => {
+        const query = `SELECT * FROM ${tabla} WHERE ${campo} = ?`;
+        conexion.query(query, [valor], (err, results) => { // Cambiado db.query a conexion.query
+            if (err) return reject(err);
+            resolve(results);
+        });
+    });
+}
+
 function agregar(tabla, data) {
     return new Promise((resolve, reject) => {
         conexion.query(`INSERT INTO ${tabla} SET ? ON DUPLICATE KEY UPDATE ?`, [data, data], (error, result) => {
@@ -93,6 +103,7 @@ function query(tabla, consulta) {
 module.exports = {
     todos,
     buscarPorNombre,
+    buscarPorCampo,
     agregar,
     eliminarPorNombre,
     actualizar,
