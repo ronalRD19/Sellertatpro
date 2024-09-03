@@ -65,15 +65,22 @@ const ProductoView = () => {
     }
   };
 
+  const validateProductData = (product) => {
+    return product.nombre && product.precio && product.stock && product.idProveedor && product.imagenProducto;
+  };
+
+  const validateEditedProductData = (product) => {
+    return product.nombre && product.precio && product.stock && product.idProveedor;
+  };
+
   const sendHandler = async (e) => {
     e.preventDefault();
-    if (!nuevoProducto.nombre || !nuevoProducto.precio || !nuevoProducto.stock || !nuevoProducto.idProveedor || !file) {
+    if (!validateProductData(nuevoProducto) || !file) {
       alert('Por favor, complete todos los campos.');
       return;
     }
 
     const formData = new FormData();
-
     formData.append('nombre', nuevoProducto.nombre);
     formData.append('precio', nuevoProducto.precio);
     formData.append('stock', nuevoProducto.stock);
@@ -147,6 +154,14 @@ const ProductoView = () => {
   };
 
   const handleActualizarProducto = async (idProducto) => {
+    if (!validateEditedProductData(productoEditado)) {
+      alert('Por favor, complete todos los campos.');
+      return;
+    }
+
+    const confirmUpdate = window.confirm('¿Está seguro que desea modificar el producto?');
+    if (!confirmUpdate) return;
+
     try {
       const response = await Axios.put(`http://localhost:3001/productos/${idProducto}`, productoEditado);
       console.log('Producto actualizado:', response.data);
@@ -157,6 +172,14 @@ const ProductoView = () => {
   };
 
   const handleEliminarProducto = async (idProducto) => {
+    if (!idProducto) {
+      alert('Producto no válido para eliminar.');
+      return;
+    }
+
+    const confirmDelete = window.confirm('¿Está seguro que desea eliminar el producto?');
+    if (!confirmDelete) return;
+
     try {
       await Axios.delete(`http://localhost:3001/productos/${idProducto}`);
       obtenerProductos();

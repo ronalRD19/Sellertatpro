@@ -45,7 +45,7 @@ const ClienteView = () => {
 
   const sendHandler = async () => {
     try {
-      const response = await Axios.post('http://localhost:3001/clientes', nuevoCliente);
+      await Axios.post('http://localhost:3001/clientes', nuevoCliente);
       setNuevoCliente({ nombre: '', direccion: '', telefono: '', cedula: '' });
       obtenerClientes();
     } catch (error) {
@@ -63,7 +63,9 @@ const ClienteView = () => {
       alert('Por favor, complete todos los campos.');
       return;
     }
-    sendHandler();
+    if (window.confirm('¿Estás seguro de que deseas agregar este cliente?')) {
+      sendHandler();
+    }
   };
 
   const handleInputChange = (e) => {
@@ -105,8 +107,20 @@ const ClienteView = () => {
   };
 
   const handleActualizarCliente = async (idCliente) => {
+    // Validaciones simples
+    if (!clienteEditado.nombre || !clienteEditado.direccion || !clienteEditado.telefono) {
+      alert('Por favor, complete todos los campos.');
+      return;
+    }
+
+    // Confirmación antes de actualizar
+    if (!window.confirm('¿Estás seguro de que deseas actualizar este cliente?')) {
+      return;
+    }
+
     try {
-      const response = await Axios.put(`http://localhost:3001/clientes/${idCliente}`, clienteEditado);
+      await Axios.put(`http://localhost:3001/clientes/${idCliente}`, clienteEditado);
+      setClienteSeleccionado(null);
       obtenerClientes();
     } catch (error) {
       console.error('Error al actualizar cliente:', error);
@@ -114,11 +128,13 @@ const ClienteView = () => {
   };
 
   const handleEliminarCliente = async (idCliente) => {
-    try {
-      await Axios.delete(`http://localhost:3001/clientes/${idCliente}`);
-      obtenerClientes();
-    } catch (error) {
-      console.error('Error al eliminar cliente:', error);
+    if (window.confirm('¿Estás seguro de que deseas eliminar este cliente?')) {
+      try {
+        await Axios.delete(`http://localhost:3001/clientes/${idCliente}`);
+        obtenerClientes();
+      } catch (error) {
+        console.error('Error al eliminar cliente:', error);
+      }
     }
   };
 

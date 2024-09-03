@@ -24,11 +24,13 @@ const UsuariosView = () => {
   };
 
   const handleEliminar = async (usuario) => {
-    try {
-      await Axios.delete(`http://localhost:3001/auth/usuario/nombre/${usuario}`);
-      obtenerUsuarios(); // Refrescar la lista de usuarios
-    } catch (error) {
-      console.error('Error al eliminar usuario:', error);
+    if (window.confirm('¿Estás seguro de que deseas eliminar este usuario?')) {
+      try {
+        await Axios.delete(`http://localhost:3001/auth/usuario/nombre/${usuario}`);
+        obtenerUsuarios(); // Refrescar la lista de usuarios
+      } catch (error) {
+        console.error('Error al eliminar usuario:', error);
+      }
     }
   };
 
@@ -39,6 +41,25 @@ const UsuariosView = () => {
   };
 
   const handleGuardarEdicion = async () => {
+    // Validaciones simples
+    if (!editedUsuario || !editedRol) {
+      alert('Por favor, completa todos los campos.');
+      return;
+    }
+
+    // Verifica si no hay cambios
+    const originalUsuario = usuarios.find(user => user.usuario === editingUsuario);
+    if (editedUsuario === editingUsuario && editedRol === originalUsuario.rol) {
+      alert('No hay cambios para guardar.');
+      setEditingUsuario(null);
+      return;
+    }
+
+    // Confirmación antes de guardar cambios
+    if (!window.confirm('¿Estás seguro de que deseas guardar los cambios?')) {
+      return;
+    }
+
     try {
       await Axios.put(`http://localhost:3001/auth/usuario/nombre/${editingUsuario}`, {
         usuario: editedUsuario,
