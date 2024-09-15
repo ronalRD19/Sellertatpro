@@ -1,0 +1,126 @@
+/* Estilos para el contenedor principal */
+.container-fluid {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.9); /* Cambia el color de fondo */
+  border-radius: 8px;
+  border: 2px solid #fff; /* Cambia el color del borde */
+}
+
+/* Estilos para el encabezado */
+h1 {
+  text-align: center;
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #dc3545; /* Cambia el color del texto */
+}
+
+/* Estilos para el formulario de agregar producto */
+.form-control {
+  width: calc(100% - 20px);
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ced4da; /* Cambia el color del borde */
+  border-radius: 4px;
+  color: #495057; /* Cambia el color del texto */
+}
+
+.btn-primary {
+  padding: 10px 20px;
+  background-color: #dc3545; /* Cambia el color de fondo */
+  color: #fff; /* Cambia el color del texto */
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.btn-primary:hover {
+  background-color: #dc3545; /* Cambia el color de fondo al pasar el mouse */
+}
+
+/* Estilos para la lista de productos */
+.card {
+  background-color: #fff;
+  padding: 15px;
+  margin-bottom: 20px;
+  border-radius: 4px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Cambia la sombra */
+  border: 1px solid #ced4da; /* Cambia el color del borde */
+}
+
+.card-title {
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: #dc3545; /* Cambia el color del texto */
+}
+
+.card-text {
+  margin-bottom: 5px;
+  color: #495057; /* Cambia el color del texto */
+}
+
+.btn-danger {
+  padding: 8px 12px;
+  background-color: #dc3545; /* Cambia el color de fondo */
+  color: #fff; /* Cambia el color del texto */
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.btn-danger:hover {
+  background-color: #c82333; /* Cambia el color de fondo al pasar el mouse */
+}
+
+.img-fluid {
+  max-width: 100%;
+  height: auto;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilos para el producto encontrado por ID */
+.producto-encontrado {
+  background-color: #fff; /* Cambia el color de fondo */
+  padding: 15px;
+  margin-top: 20px;
+  border-radius: 4px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Cambia la sombra */
+  border: 1px solid #ced4da; /* Cambia el color del borde */
+}
+
+.producto-encontrado h4 {
+  font-size: 18px;
+  margin-bottom: 5px; /* Reducir el margen inferior del encabezado */
+  color: #dc3545; /* Cambia el color del texto */
+}
+
+.producto-encontrado p {
+  margin-bottom: 2px;
+  color: #495057; /* Cambia el color del texto */
+}
+
+/* Estilos para el producto encontrado por ID */
+.producto-encontrado {
+  background-color: #fff; /* Cambia el color de fondo */
+  padding: 15px;
+  margin-top: 10px;
+  margin-bottom: 10px; /* Ajustar el margen inferior */
+  border-radius: 4px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Cambia la sombra */
+  border: 1px solid #ced4da; /* Cambia el color del borde */
+}
+
+.producto-encontrado h4 {
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: #007bff; /* Cambia el color del texto */
+}
+
+.producto-encontrado p {
+  margin-bottom: 5px;
+  color: #495057; /* Cambia el color del texto */
+}

@@ -1,0 +1,20 @@
+ .container-ventas {
+    width: 60%;          /* Establece el ancho del contenedor al 50% del contenedor padre */
+    margin-left: auto;   /* Empuja el contenedor hacia la derecha */
+    margin-right: 0;     /* Asegura que el margen derecho sea 0 */
+  }
+  .factura-list {
+    max-height: 60vh;
+    overflow-y: auto;
+  }
+  
+  .factura-item {
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: #f9f9f9;
+  }
+  
+  .factura-item p {
+    margin: 5px 0;
+  }
