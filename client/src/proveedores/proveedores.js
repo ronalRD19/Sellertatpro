@@ -238,6 +238,7 @@ const ProveedorView = () => {
           <div key={proveedor.idProveedor} className="col-md-4 col-sm-6">
             <div className="card">
               <div className="card-body">
+              <h5 className="card-title">ID: {proveedor.idProveedor}</h5>
                 <h5 className="card-title">Nombre: {proveedor.nombre}</h5>
                 <p className="card-text">Dirección: {proveedor.direccion}</p>
                 <p className="card-text">Teléfono: {proveedor.telefono}</p>
@@ -287,6 +288,7 @@ const ProveedorView = () => {
           <div key={proveedorB.idProveedor} className="col-md-4 col-sm-6">
             <div className="card">
               <div className="card-body">
+                <h5 className="card-title">ID: {proveedorB.idProveedor}</h5>
                 <h5 className="card-title">Nombre: {proveedorB.nombre}</h5>
                 <p className="card-text">Dirección: {proveedorB.direccion}</p>
                 <p className="card-text">Teléfono: {proveedorB.telefono}</p>

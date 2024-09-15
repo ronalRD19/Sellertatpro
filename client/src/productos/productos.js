@@ -65,9 +65,7 @@ const ProductoView = () => {
     }
   };
 
-  const validateProductData = (product) => {
-    return product.nombre && product.precio && product.stock && product.idProveedor && product.imagenProducto;
-  };
+
 
   const validateEditedProductData = (product) => {
     return product.nombre && product.precio && product.stock && product.idProveedor;
@@ -75,7 +73,7 @@ const ProductoView = () => {
 
   const sendHandler = async (e) => {
     e.preventDefault();
-    if (!validateProductData(nuevoProducto) || !file) {
+    if (!nuevoProducto.nombre || !nuevoProducto.precio || !nuevoProducto.stock || !nuevoProducto.idProveedor || !file) {
       alert('Por favor, complete todos los campos.');
       return;
     }
