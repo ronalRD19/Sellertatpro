@@ -189,8 +189,12 @@ async function agregar(req, res, next) {
     }
     respuesta.success(req, res, mensaje, 201);
   } catch (err) {
-    next(err);
-  }
+    if (err.message === 'El usuario ya existe') {
+        respuesta.error(req, res, err.message, 400);
+    } else {
+        next(err);
+    }
+}
 }
 
 module.exports = router;

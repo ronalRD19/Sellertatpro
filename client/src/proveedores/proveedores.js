@@ -111,6 +111,14 @@ const ProveedorView = () => {
   };
 
   const handleActualizarProveedor = async (idProveedor) => {
+    if (!proveedorEditado.nombre || !proveedorEditado.direccion || !proveedorEditado.telefono || !proveedorEditado.idUsuario) {
+      alert('Por favor, complete todos los campos.');
+      return;
+    }
+
+    const confirmUpdate = window.confirm('¿Está seguro que desea modificar el proveedor?');
+    if (!confirmUpdate) return;
+
     try {
       const response = await Axios.put(`http://localhost:3001/proveedores/${idProveedor}`, proveedorEditado);
       console.log('Proveedor actualizado:', response.data);
@@ -121,6 +129,14 @@ const ProveedorView = () => {
   };
 
   const handleEliminarProveedor = async (idProveedor) => {
+    if (!idProveedor) {
+      alert('Proveedor no válido para eliminar.');
+      return;
+    }
+
+    const confirmDelete = window.confirm('¿Está seguro que desea eliminar el proveedor?');
+    if (!confirmDelete) return;
+
     try {
       await Axios.delete(`http://localhost:3001/proveedores/${idProveedor}`);
       obtenerProveedores();
@@ -202,7 +218,6 @@ const ProveedorView = () => {
                 className="form-control"
                 placeholder="Nombre del proveedor"
                 ref={inputRef}
-                onChange={(e) => setProveedorBuscado(e.target.value)}
               />
             </div>
             <div className="mb-3">
