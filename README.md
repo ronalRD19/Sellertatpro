@@ -1,3 +1,5 @@
+
+![Logo de SellerTaT](imagenes/Logo.png)
 # SellerTaT
 
 📣 **Acerca de** 📣  
