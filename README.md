@@ -35,7 +35,7 @@ En **SellerTaT**, estamos comprometidos con la innovación y la excelencia, ofre
 
 ## Vista de Administrador
 ![Vista de Administrador](imagenes/admin.jpg)
-## Vista de Venderdor
+## Vista de Vendedor
 ![Vista de Administrador](imagenes/vende.jpg)
 ## Vista de Ventas
 ![Vista de Administrador](imagenes/ventas.jpg)
