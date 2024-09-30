@@ -17,7 +17,6 @@ Nuestra plataforma nace con la misión de ofrecer a la distribuidora de Fontibó
 - **Administración de Usuarios:** Plataforma segura con opciones para registrar, modificar y eliminar cuentas, adaptadas a las responsabilidades específicas de cada usuario.
 - **Manejo de Inventarios:** Control preciso del inventario con actualizaciones automáticas para mantener información precisa.
 - **Informes y Estadísticas:** Generación de informes detallados para evaluar el rendimiento del negocio.
-- **Medios de Pago:** Variadas opciones de pago para mayor comodidad del cliente.
 - **Notificaciones Personalizadas:** Envío de notificaciones automáticas con cambios de precio y promociones exclusivas.
 - **Foco en Fontibón:** Diseñado para mejorar la distribución y entrega de mercancía en esta localidad.
 
