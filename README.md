@@ -1,15 +1,11 @@
-# SellerTaT https://ronalrd19.github.io/Sellertatpro/
-📣 **Acerca de** 📣  
-Bienvenido a **SellerTaT**, nuestra plataforma especializada en la gestión integral de ventas Tienda a Tienda (TaT) para distribuidoras de productos desechables y congelados. Desarrollamos soluciones tecnológicas adaptadas a las necesidades específicas de la distribuidora, optimizando los procesos y proporcionando herramientas clave para el crecimiento y la eficiencia del negocio.
 
-
-
-
-### Logo
 <div align="center">
   <img src="imagenes/Logo.jpg" alt="Logo" />
 </div>   
 
+# SellerTaT https://ronalrd19.github.io/Sellertatpro/
+📣 **Acerca de** 📣  
+Bienvenido a **SellerTaT**, nuestra plataforma especializada en la gestión integral de ventas Tienda a Tienda (TaT) para distribuidoras de productos desechables y congelados. Desarrollamos soluciones tecnológicas adaptadas a las necesidades específicas de la distribuidora, optimizando los procesos y proporcionando herramientas clave para el crecimiento y la eficiencia del negocio.
 
 
 ![Pantalla de Inicio](imagenes/home.jpg)
