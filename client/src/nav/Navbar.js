@@ -8,12 +8,14 @@ function Navbar({ isLoggedIn, onLogout, userRole }) {
 
   const handleLogout = () => {
     onLogout();
-    history.push("/home"); // Redirige al usuario a la página de inicio después de cerrar sesión
+    history.push("/home");
   };
 
   return (
-    <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav className="navbar navbar-expand-lg navbar-dark">
       <div className="container">
+        <img src={`${process.env.PUBLIC_URL}/Logo.jpg`} alt="Logo" className="navbar-logo" />
+        <span className="navbar-title">¡SellerTaT!</span>
         <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span className="navbar-toggler-icon"></span>
         </button>

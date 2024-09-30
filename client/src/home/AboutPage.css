@@ -1,22 +1,39 @@
 /* Estilos para la tarjeta */
 .card {
-  background-color: #fff; /* Fondo de la tarjeta negro */
-  border-radius: 20px; /* Bordes redondeados */
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5); /* Sombra más pronunciada */
-  padding: 20px; /* Espaciado interno */
-  margin: 20px; /* Margen externo */
+  background-color: #ffffff; /* Fondo blanco */
+  border-radius: 15px; /* Bordes redondeados */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  padding: 40px; /* Espaciado interno */
+  margin: 30px auto; /* Margen centrado */
+  max-width: 800px; /* Ancho máximo para la tarjeta */
+  text-align: left; /* Alinear texto a la izquierda */
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; /* Fuente moderna */
 }
 
 /* Estilos para el título */
 .card h1 {
-  font-family: "Arial Black", sans-serif; /* Fuente moderna */
-  color: #dc3545; /* Color del texto del título rojo */
+  font-family: "Playfair Display", serif; /* Fuente elegante */
+  color: #dc3545; /* Color del título */
+  font-size: 2.5rem; /* Tamaño del texto del título */
+  margin-bottom: 20px; /* Espacio debajo del título */
+  text-align: center; /* Centrar el título */
+}
+
+/* Estilos para los subtítulos */
+.card h2 {
+  font-size: 1.5rem; /* Tamaño de los subtítulos */
+  color: #000000; /* Color oscuro */
+  margin-top: 20px; /* Espacio superior */
+  margin-bottom: 10px; /* Espacio inferior */
+  font-weight: bold; /* Negrita */
 }
 
 /* Estilos para el párrafo */
 .card p {
-  font-size: 1.2rem; /* Tamaño del texto */
-  color: #000000; /* Color del texto blanco */
+  font-size: 1.1rem; /* Tamaño del texto */
+  color: #000000; /* Color gris */
+  line-height: 1.7; /* Mayor altura de línea para mejor legibilidad */
+  margin-bottom: 15px; /* Espacio entre párrafos */
 }
 
 /* Estilos para la lista */
@@ -26,17 +43,32 @@
 }
 
 /* Estilos para los ítems de la lista */
+.card ul li {
+  position: relative; /* Para posicionar los puntos de viñeta */
+  padding-left: 20px; /* Espacio a la izquierda */
+  margin-bottom: 15px; /* Espacio entre ítems */
+}
+
 .card ul li::before {
-  content: "\2022"; /* Agrega un punto de viñeta */
-  color: #dc3545; /* Color del punto de viñeta rojo */
-  font-weight: bold; /* Punto de viñeta en negrita */
-  display: inline-block; /* Mostrar en línea */
-  width: 1em; /* Ancho del punto de viñeta */
-  margin-left: -1em; /* Mueve el punto de viñeta a la izquierda */
-  border: 1px solid white; 
+  content: "✦"; /* Agrega un símbolo elegante */
+  color: #dc3545; /* Color del símbolo */
+  font-weight: bold; /* Símbolo en negrita */
+  position: absolute; /* Posicionar el símbolo */
+  left: 0; /* Alinear a la izquierda */
+  font-size: 1.2rem; /* Tamaño del símbolo */
 }
 
 /* Estilos para el texto en negrita */
 .card strong {
-  color: #fff; /* Color del texto en negrita blanco */
+  color: #000000; /* Color del texto en negrita */
+}
+
+/* Estilos para enlaces */
+.card a {
+  color: #dc3545; /* Color del enlace */
+  text-decoration: none; /* Sin subrayado */
+}
+
+.card a:hover {
+  text-decoration: underline; /* Subrayar al pasar el mouse */
 }

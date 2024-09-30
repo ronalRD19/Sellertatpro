@@ -67,30 +67,29 @@ function LoginForm({ setIsLoggedIn, setUserRole }) {
 
   return (
     <div className="loginForm">
-      <img src="/Logo.png" alt="Logo" className="logo" />
       <form onSubmit={login}>
-        <h4>Login Here</h4>
-        <label htmlFor="usuario">Username*</label>
+        <h4>Inicio de sesion</h4>
+        <label htmlFor="usuario">Usuario:</label>
         <input
           className="textInput"
           type="text"
           name="usuario"
           value={usuario}
           onChange={(e) => setUsuario(e.target.value)}
-          placeholder="Enter your usuario"
+          placeholder="Ingresa tu usuario"
           required
         />
-        <label htmlFor="password">Password*</label>
+        <label htmlFor="password">Contraseña:</label>
         <input
           className="textInput"
           type="password"
           name="password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
-          placeholder="Enter your Password"
+          placeholder="Ingresa tu contraseña"
           required
         />
-        <input className="button" type="submit" value="Login" />
+        <input className="button" type="submit" value="Acceder" />
         <h1
           style={{
             color: "red",

@@ -1,28 +1,37 @@
 .navbar {
-  background-color: rgba(0, 0, 0, 0.9);
-  border: 1px solid white; /* Borde sólido blanco */
-  border-radius: 10px; /* Bordes circulares */
-  padding: 20px; /* Ajuste del relleno */
-  transition: background-color 0.10s ease; /* Transición suave del color de fondo */
+  background-color: #000000; /* Fondo negro */
+  border: 1px solid #000000; /* Borde blanco */
+  border-radius: 0; /* Sin bordes circulares */
+  box-shadow: none; /* Sin sombra */
+  padding: 0.5rem 1rem; /* Relleno adecuado para centrar */
+  display: flex; /* Usar flexbox para centrar elementos */
+  align-items: center; /* Alinear verticalmente */
+  justify-content: center; /* Centrar horizontalmente */
 }
 
-.navbar-brand {
-  font-size: 1.5rem; /* Tamaño del texto del enlace */
-  color: #fff; /* Color del texto del enlace */
+.navbar-logo {
+  height: 60px; /* Aumentar la altura del logo */
+  margin-right: 15px; /* Espacio entre el logo y el texto */
+}
+
+.navbar-title {
+  font-size: 2rem; /* Tamaño del texto más grande */
+  color: #ff0707; /* Color del texto */
+  font-family: 'Arial', sans-serif; /* Fuente elegante */
+  font-weight: bold; /* Negrita */
+}
+
+.navbar-nav {
+  margin-left: auto; /* Asegura que los elementos se alineen a la derecha */
 }
 
 .navbar-nav .nav-link {
   color: #fff; /* Color del texto de los enlaces */
+  transition: color 0.3s ease; /* Transición suave del color */
+  padding: 0.5rem; /* Relleno aumentado para mayor área clicable */
+  font-size: 1rem; /* Tamaño de fuente más grande */
 }
 
-.dropdown-menu {
-  background-color: #000; /* Fondo del menú desplegable */
-}
-
-.dropdown-item {
-  color: #fff; /* Color del texto del menú desplegable */
-}
-
-.dropdown-divider {
-  border-color: #fff; /* Color del borde divisor del menú desplegable */
+.navbar-nav .nav-link:hover {
+  color: #ffc107; /* Color en hover */
 }
