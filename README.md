@@ -5,8 +5,12 @@
 📣 **Acerca de** 📣  
 Bienvenido a **SellerTaT**, nuestra plataforma especializada en la gestión integral de ventas Tienda a Tienda (TaT) para distribuidoras de productos desechables y congelados. Desarrollamos soluciones tecnológicas adaptadas a las necesidades específicas de la distribuidora, optimizando los procesos y proporcionando herramientas clave para el crecimiento y la eficiencia del negocio.
 
+![Pantalla de Inicio](imagenes/home.jpg)
+
 ## Visión General
 Nuestra plataforma nace con la misión de ofrecer a la distribuidora de Fontibón una solución integral para la gestión de ventas, inventario y clientes. Buscamos modernizar y potenciar la operación de la empresa, permitiendo una administración más eficiente y proporcionando a los clientes una experiencia de compra optimizada.
+
+![Pantalla de Login](imagenes/login.jpg)
 
 ## Características Principales
 - **Gestión de Ventas:** Realice pedidos de manera fácil y rápida a través de nuestra plataforma, con notificaciones automáticas sobre cambios de precios y promociones exclusivas.
