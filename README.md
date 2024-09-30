@@ -2,7 +2,11 @@
 Bienvenido a **SellerTaT**, nuestra plataforma especializada en la gestión integral de ventas Tienda a Tienda (TaT) para distribuidoras de productos desechables y congelados. Desarrollamos soluciones tecnológicas adaptadas a las necesidades específicas de la distribuidora, optimizando los procesos y proporcionando herramientas clave para el crecimiento y la eficiencia del negocio.
 
 
-![Logo de SellerTaT](imagenes/Logo.jpg)
+### Logo
+<div align="center">
+  <img src="imagenes/logo.png" alt="Logo" />
+</div>   
+
 # SellerTaT https://ronalrd19.github.io/Sellertatpro/
 
 ![Pantalla de Inicio](imagenes/home.jpg)
