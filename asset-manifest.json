@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/Sellertatpro/static/css/main.bafe284a.css",
-    "main.js": "/Sellertatpro/static/js/main.4bc9f1b1.js",
+    "main.js": "/Sellertatpro/static/js/main.db279a28.js",
     "static/js/453.419a5d54.chunk.js": "/Sellertatpro/static/js/453.419a5d54.chunk.js",
     "static/media/back.jpg": "/Sellertatpro/static/media/back.4ee370f97af7b6261c61.jpg",
     "index.html": "/Sellertatpro/index.html",
     "main.bafe284a.css.map": "/Sellertatpro/static/css/main.bafe284a.css.map",
-    "main.4bc9f1b1.js.map": "/Sellertatpro/static/js/main.4bc9f1b1.js.map",
+    "main.db279a28.js.map": "/Sellertatpro/static/js/main.db279a28.js.map",
     "453.419a5d54.chunk.js.map": "/Sellertatpro/static/js/453.419a5d54.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.bafe284a.css",
-    "static/js/main.4bc9f1b1.js"
+    "static/js/main.db279a28.js"
   ]
 }
