@@ -58,7 +58,7 @@ git clone https://github.com/tu-usuario/Sellertatpro.git
 - **npm run dev.
 - **Navega a la carpeta del client y ejecuta
 - **cd client
-- **npm starT.
+- **npm start.
 
 
 ¡MUCHAS GRACIAS!
