@@ -4,7 +4,7 @@ Bienvenido a **SellerTaT**, nuestra plataforma especializada en la gestión inte
 
 ### Logo
 <div align="center">
-  <img src="imagenes/logo.jpg" alt="Logo" />
+  <img src="imagenes/Logo.jpg" alt="Logo" />
 </div>   
 
 
