@@ -96,6 +96,8 @@ function LoginForm({ setIsLoggedIn, setUserRole }) {
             fontSize: "15px",
             textAlign: "center",
             marginTop: "20px",
+         
+         
           }}
         >
           {loginStatus}
