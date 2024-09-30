@@ -34,7 +34,7 @@ En **SellerTaT**, estamos comprometidos con la innovación y la excelencia, ofre
 
 ### 1. Clonar el Repositorio
 bash
-git clone https://github.com/tu-usuario/SellerTaT.git
+git clone https://github.com/tu-usuario/Sellertatpro.git
 ### 2. Instalar Dependencias
 - **Navega a la carpeta del server y ejecuta
 - **cd server
