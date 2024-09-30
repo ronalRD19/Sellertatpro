@@ -34,6 +34,13 @@ En **SellerTaT**, estamos comprometidos con la innovación y la excelencia, ofre
 - **Base de Datos:** MySQL (con XAMPP)
 - **Aplicación Móvil:** React Native
 
+## Vista de Administrador
+![Vista de Administrador](imagenes/admin.jpg)
+## Vista de Venderdor
+![Vista de Administrador](imagenes/vende.jpg)
+## Vista de Ventas
+![Vista de Administrador](imagenes/ventas.jpg)
+
 ## Cómo Ejecutar el Proyecto
 
 ### 1. Clonar el Repositorio
